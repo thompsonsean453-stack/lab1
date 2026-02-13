@@ -6,13 +6,13 @@
     .globl  fill_ram
 fill_ram:
     # Clear RAM locations 50H - 58H (write 00h)
-    leaq    ram+0x50, %rdi       # rdi = &ram[0x50]
-    movl    $9, %ecx             # 9 bytes: 0x50..0x58
+    leaq    ram+0x50, %rdi      
+    movl    $9, %ecx             
 
 .Lloop:
-    movb    $0x00, (%rdi)        # *rdi = 0
-    incq    %rdi                 # rdi++
-    loop    .Lloop               # ecx-- ; if ecx != 0, jump
+    movb    $0x00, (%rdi)      
+    incq    %rdi                
+    loop    .Lloop               
     ret
 
     .section .note.GNU-stack,"",@progbits

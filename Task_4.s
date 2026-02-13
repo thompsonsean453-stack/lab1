@@ -6,16 +6,16 @@
     .globl  fill_ram             # Make function visible to C program 
 fill_ram:
     # Compute 1 + 2 + ... + 10 and store result at RAM[50h]
-    xorl    %eax, %eax           # sum = 0
-    movl    $1, %ecx             # i = 1
+    xorl    %eax, %eax          
+    movl    $1, %ecx             
 
 .Lsum:
-    addl    %ecx, %eax           # sum += i
-    incl    %ecx                 # i++
-    cmpl    $11, %ecx            # stop when i == 11
+    addl    %ecx, %eax          
+    incl    %ecx                 
+    cmpl    $11, %ecx           
     jne     .Lsum
 
-    movb    %al, ram+0x50        # store low byte of sum into RAM[50h]
+    movb    %al, ram+0x50       
     ret
 
     .section .note.GNU-stack,"",@progbits

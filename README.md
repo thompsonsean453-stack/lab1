@@ -6,7 +6,7 @@ One C driver (`print_ram.c`) used to test assembly functions that modify a 256-b
 Four assembly files (`Task_1.s` to `Task_4.s`) for Tasks 1–4
 
 ## Files
-- `print_hello.s` – prints “Hello, World!” using Linux syscalls
+- `print_hello.s` – prints “Hello, World!” 
 - `print_ram.c` – C driver that calls `fill_ram()` and prints `ram[0x50]` through `ram[0x58]`
 - `Task_1.s` – store `FFh` into RAM locations `50h`–`58h` using direct addressing
 - `Task_2.s` – store `FFh` into RAM locations `50h`–`58h` using indirect addressing
